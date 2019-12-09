@@ -1,0 +1,106 @@
+// SIZE MIXINS
+@mixin sectionMaxSize {
+  width: 100%;
+  max-width: 1170px;
+}
+@mixin outWrapper {
+  width: 100%;
+  height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+// MIXIN ADD FONT PROPERTIES
+@mixin add-font-properties($fam: false, $size: false, $colour: false, $weight: false, $lh: false) {
+  @if $fam {
+    font-family: $fam, Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  }
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+//====================================================
+
+// MIXINS HEADINGS AND ANY TITLE
+@mixin nav-items {
+  @include add-font-properties($mainFont, 0.9286rem, $color-text_main, $font-bold, 1rem);
+  text-transform: uppercase;
+}
+@mixin headingMain {
+  @include add-font-properties($additionalFont, 4.6429rem, $color-text_main, $font-bold, 5.0714rem);
+  text-transform: uppercase;
+}
+@mixin headingItem-1 {
+  @include add-font-properties($mainFont, 1rem, $color-title, $font-bold, 1rem);
+  text-transform: uppercase;
+}
+@mixin headingItem-2 {
+  @include add-font-properties($mainFont, 1rem, $color-text_main, $font-bold, 1rem);
+  text-transform: uppercase;
+}
+@mixin headingItem-3 {
+  @include add-font-properties($mainFont, 0.9286rem, $color-item, $font-bold, 1rem);
+  text-transform: uppercase;
+}
+@mixin headingName {
+  @include add-font-properties($mainFont, 1.5714rem, $color-title, $font-normal, 1.6rem);
+  text-transform: capitalize;
+}
+//====================================================
+
+// BREAKPOINTS MIXIN
+@mixin breakpoint($point) {
+  @if $point == Sm {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $point == Tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $point == Laptop {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == Lg {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $point == extraLarge {
+    @media (max-width: 9999px) {
+      @content;
+    }
+  }
+}
+//====================================================
+// BUTTON MIXINS
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin button-content {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  max-width: 100%;
+  height: 46px;
+  background-color: $color-item;
+  @include add-font-properties($buttonFont, 0.9286rem, $color-text_main, $font-normal, 1.5rem);
+  transition: all 0.5s ease;
+}
+//====================================================

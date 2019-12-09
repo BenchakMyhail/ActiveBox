@@ -1,0 +1,37 @@
+//font-famalies
+@font-face {
+  font-family: "Cardo-Italic";
+  src: local("CardoItalic"), local("Cardo-Italic"),
+   url("/assets/fonts/Cardo-Italic/Cardo-Italic.woff2") format("woff2"),
+    url("/assets/fonts/Cardo-Italic/Cardo-Italic.woff") format("woff"),
+    url("/assets/fonts/Cardo-Italic/Cardo-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Raleway-Regular";
+  src: local("Raleway Regular"), local("Raleway-Regular"),
+    url("/assets/fonts/Raleway-Regular/Raleway-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Raleway-Regular/Raleway-Regular.woff") format("woff"),
+    url("/assets/fonts/Raleway-Regular/Raleway-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway-SemiBold";
+  src: local("Raleway Semi Bold"), local("Raleway-Semi-Bold"),
+    url("/assets/fonts/Raleway-SemiBold/Raleway-SemiBold.woff2") format("woff2"),
+    url("/assets/fonts/Raleway-SemiBold/Raleway-SemiBold.woff") format("woff"),
+    url("/assets/fonts/Raleway-SemiBold/Raleway-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: local('Open Sans Regular'), local('Open-Sans-Regular'),
+      url('/assets/fonts/OpenSans-Regular/OpenSans-Regular.woff2') format('woff2'),
+      url('/assets/fonts/OpenSans-Regular/OpenSans-Regular.woff') format('woff'),
+      url('/assets/fonts/OpenSans-Regular/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

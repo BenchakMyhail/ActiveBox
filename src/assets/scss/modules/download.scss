@@ -1,0 +1,32 @@
+.download-section{
+  position: relative;
+  @include outWrapper;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  text-align: center; 
+  h2{
+    @include headingName;
+    padding-bottom: 16px;
+  }
+  p{
+    @include add-font-properties($mainFont, 0.9286rem, $color-item, $font-bold, 1.5rem);
+    text-transform: uppercase;
+  }
+  &__btn-download {
+    @include button-reset;
+    @include button-content;
+    display: inline-block;
+    margin-top: 40px;
+    width: 280px;
+    &:hover,
+    &:active {
+      box-shadow: 0px 0px 0px 2px $color-item inset;
+      color: $color-item;
+      background-color: $color-text_main;
+    }
+  }
+}

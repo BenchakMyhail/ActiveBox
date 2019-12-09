@@ -1,0 +1,48 @@
+.our-team-section {
+  @include sectionMaxSize;
+  margin: 0 auto;
+  padding: 101px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include breakpoint(Laptop) {
+    justify-content: space-evenly;
+  }
+  &__item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    @include breakpoint(Laptop) {
+      width: 35%;
+    }
+    @include breakpoint(Sm) {
+      width: 80%;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+    h3 {
+      @include headingName;
+      padding-top: 30px;
+      padding-bottom: 16px;
+    }
+    p {
+      @include add-font-properties($mainFont, 0.9286rem, $color-item, $font-normal, 1rem);
+      text-transform: uppercase;
+      padding-bottom: 29px;
+    }
+    span {
+      @include add-font-properties($mainFont, 1rem, $color-subtitle, $font-normal, 1.5rem);
+      padding-bottom: 31px;
+    }
+  }
+}
+.social-icons-list {
+  li {
+    border: 1px solid $color-icon_border;
+    color: $color-icon;
+  }
+}

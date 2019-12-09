@@ -1,0 +1,121 @@
+.header-section {
+  position: relative;
+  width: 100%;
+  min-height: 750px;
+  background-size: cover;
+  background-position: center;
+  &_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 156px;
+    @include outWrapper;
+    background-color: rgba(43, 46, 74, 0.95);
+  }
+  &__nav {
+    position: relative;
+    @include sectionMaxSize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    margin: 0 auto;
+    border-bottom: 2px solid #505268;
+  }
+
+  .list_wrapper {
+    transition: left 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    &.list_active {
+      left: 0;
+      visibility: visible;
+    }
+  
+    @include breakpoint(Tablet) {
+      position: absolute;
+      top: 100px;
+      left: -110%;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      visibility: hidden;
+    }
+    display: flex;
+    justify-content: space-between;
+    .list__item {
+      padding-left: 30px;
+      @include breakpoint(Tablet) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      a {
+        position: relative;
+        box-sizing: border-box;
+        @include nav-items;
+        @include breakpoint(Tablet){
+          font-size: 1.5rem;
+        }
+        &:after {
+          display: block;
+          position: absolute;
+          margin-top: 5px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: $color-text_main;
+          content: "";
+          transition: width 0.3s ease-out;
+         
+        }
+        &:hover:after,
+        &:focus:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__title {
+    flex-basis: 30%;
+    align-self: center;
+    width: 100%;
+    max-width: 912px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    h1 {
+      @include headingMain;
+     
+      @include breakpoint(Laptop){
+        font-size: 3rem;
+      } 
+      @include breakpoint(Sm){
+        font-size: 2rem;
+      }
+    }
+    p {
+      @include add-font-properties($mainFont, 1.5714rem, $color-text_main, $font-normal, 2.3571rem);
+      padding-top: 41px;
+      @include breakpoint(Laptop){
+        font-size: 1.2rem;
+      } 
+    }
+  }
+  &__btn-find-more {
+    @include button-reset;
+    @include button-content;
+    display: inline-block;
+    margin: 0 auto;
+    width: 200px;
+    &:hover,
+    &:active {
+      box-shadow: 0px 0px 0px 2px $color-text_main inset;
+    }
+  }
+}

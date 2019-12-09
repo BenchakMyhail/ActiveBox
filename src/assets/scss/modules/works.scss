@@ -1,0 +1,41 @@
+.works-section {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    position: relative;
+    width: 25%;
+    background-size: cover;
+    background-position: center;
+    padding-top: calc(100% * 0.75 / 4);
+    cursor: pointer;
+    outline: 1px solid $color-subtitle;
+    &:hover .img-text {
+      opacity: 1;
+    }
+    @include breakpoint(Laptop) {
+      width: 50%;
+      padding-top: calc(100% * 0.75 / 2);
+    }
+  }
+}
+.img-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background-color: rgba(232, 69, 69, 0.9);
+  transition: 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h3 {
+    @include headingItem-2;
+  }
+  p {
+    padding-top: 13px;
+    @include add-font-properties($mainFont, 1rem, $color-text_main, $font-normal, 1rem);
+  }
+}
